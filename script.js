@@ -3,14 +3,14 @@ $(document).ready(function() {
    
     // need date and current time to show up and connect
     // to #currentDay - look up create element in jquery
-  
+     
     var presentTime = moment().format('MMMM Do YYYY, h:mm a');
     let $currentDay = $("#currentDay");
     $currentDay.text(presentTime);
     console.log(currentDay);
-   
 
-    // build rows and columns in jquery not javascript
+    
+   // build rows and columns in jquery not javascript
     // row should start with time (hourly - 1/4 row)
     // set time frame on calendar also .timeblock
 
