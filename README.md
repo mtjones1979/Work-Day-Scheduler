@@ -27,3 +27,7 @@ THEN the saved events persist
 
 
 ## Resources
+<li>moment.js</li>
+<li>jQuery.com</li>
+<li>Instructor, TAs, and Classmates</li>
+<li>Google</li>
