@@ -15,8 +15,7 @@ $(document).ready(function() {
     // }
     var $calendar = $(".container");
     $calendar.empty();
-    var timeBlocks = [];
-    var entries = [];
+    
     // build rows and columns in jquery not javascript - 
    // need enough rows for set time of working hours
    
