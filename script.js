@@ -3,7 +3,7 @@
 // I had a friend look at my code to help and they explained template literals(with guidance), to condense into simpler structure/form 
 // and was able to get code color to work.
 // I was out of my element but as their insight got the columns to work and color code to flow.
-//  Since they had helped me alot, I did not want to ask for their help with time display and internal storage.
+// Since they had helped me alot, I did not want to ask for their help with time display and internal storage.
 // I was able to get the day planner set up to parameters until the final save button and internal storage
 // I have a tutor appt for Friday to finish that portion.
 $(document).ready(function() {   
@@ -78,6 +78,24 @@ $(document).ready(function() {
         colorCoding();
     }, 1000);
 
+    // create function to input text and tie to internal storage   
+    
+    
+    // var value = localStorage.getItem("key");
+    // function getLocalStorage(event) {
+    //     if (value) 
+    //     $(`#event${key}`).text(value);
+    //     console.log(value)
+    // }
+
+    $('.saveBtn').on('click', function(){
+        var eventText = $(this).parent().children($eventPlanner).val();
+       
+        var dataEl = $(this).parent().data("time");
+
+        localStorage.setItem(dataEl, eventText);
+
+    })
 });
        
     

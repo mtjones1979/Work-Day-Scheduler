@@ -24,7 +24,7 @@ THEN the saved events persist
 ```
 
 ## Link
-
+<a href="https://mtjones1979.github.io/Work-Day-Scheduler/">Click</a>
 
 ## Resources
 <li>moment.js</li>
