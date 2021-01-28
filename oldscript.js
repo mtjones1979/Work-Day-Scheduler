@@ -25,8 +25,7 @@ $(document).ready(function() {
     // row should start with time (hourly - 1/4 row)
     // set time frame on calendar also .time-block
 
-    // I spent lots of time writing out element creation like last homework and it did not look right
-    // found on jquery about adding all together - works and looks better
+    
        var $rowDiv = $('<div data-time=${i} id="${i}" class="row">');
         // $rowDiv.addClass("row");
         // $rowDiv.attr(");
@@ -79,16 +78,21 @@ $(document).ready(function() {
 
             $calendar.append($rowDiv);
             timeBlocks.push($rowDiv);
-            // getLocalStorage(i); 
-    }
-        // console.log(getLocalStorage);
-    function getAMPM(hours){
-        var ampm = hours >= 12 ? 'pm' : 'am';
-        hours = hours % 12;
-        hours = hours ? hours : 12;
-        return hours + ampm;
-    }
-    getAMPM();
+    
+
+    let displayHour = 0;
+       let ampm = "";
+       if (hour > 12) {
+           displayHour = hour - 12;
+           ampm = "pm";
+        } else {
+           displayHour = hour;
+           ampm = "am";
+        }
+        $timeBlock.text("{displayHour} + {ampm}");
+
+        $rowDiv.append($timeDiv);
+        $timeDiv.append($timeBlock);
     // create function to link current time to time on planner
     // past hours need to (.past)
     // present hour need to (.present) 
