@@ -7,7 +7,12 @@
 // I was able to get the day planner set up to parameters until the final save button and internal storage
 // I have a tutor appt for Friday to finish that portion.
 $(document).ready(function() {   
-// need date and current time to show up and connect
+
+$
+
+
+
+    // need date and current time to show up and connect
 // to #currentDay - look up create element in jquery
     var presentTime = moment().format('MMMM Do YYYY, h:mm a');
     let $currentDay = $("#currentDay");
@@ -27,7 +32,7 @@ $(document).ready(function() {
     // row should start with time (hourly - 1/4 row)
     
        var $timeDiv = $('<div class="col-md-2"><p class="hour">' + displayHour(i) + '</p>');
-        
+       
     // 2nd part of planner that shows text input
     // text area to put event (span/label?/look back at hw 4)
     // (textarea in CSS)
@@ -79,6 +84,12 @@ $(document).ready(function() {
     }, 1000);
 
     // create function to input text and tie to internal storage   
+    $('.saveBtn').on("click", function(){
+        var textInput = $(this).siblings(".description").val();
+        var time = $(this).parent().attr("id")
+        
+        localStorage.setItem(textInput, time);
+    })
     
     
     // var value = localStorage.getItem("key");
@@ -88,14 +99,14 @@ $(document).ready(function() {
     //     console.log(value)
     // }
 
-    $('.saveBtn').on('click', function(){
-        var eventText = $(this).parent().children($eventPlanner).val();
+    // $('.saveBtn').on('click', function(){
+    //     var eventText = $(this).parent().children($eventPlanner).val();
        
-        var dataEl = $(this).parent().data("time");
+    //     var dataEl = $(this).parent().data("time");
 
-        localStorage.setItem(dataEl, eventText);
+    //     localStorage.setItem(dataEl, eventText);
 
-    })
+    // })
 });
        
     
