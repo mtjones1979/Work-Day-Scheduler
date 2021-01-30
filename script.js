@@ -8,11 +8,7 @@
 // I have a tutor appt for Friday to finish that portion.
 $(document).ready(function() {   
 
-$
-
-
-
-    // need date and current time to show up and connect
+// need date and current time to show up and connect
 // to #currentDay - look up create element in jquery
     var presentTime = moment().format('MMMM Do YYYY, h:mm a');
     let $currentDay = $("#currentDay");
@@ -45,6 +41,8 @@ $
             $rowDiv.append($buttonDiv);
 
             $calendar.append($rowDiv);
+
+            getInput(i);
         }
            
     function displayHour(hours){
@@ -85,28 +83,23 @@ $
 
     // create function to input text and tie to internal storage   
     $('.saveBtn').on("click", function(){
-        var textInput = $(this).siblings(".description").val();
-        var time = $(this).parent().attr("id")
         
-        localStorage.setItem(textInput, time);
+        var textInput = $(this).parent().siblings().children(".description").val();
+        var inputText = $(this).attr("id")
+        
+        localStorage.setItem(inputText, textInput);
     })
+    function getInput(key){
+        console.log(key);
+        var textInfo=window.localStorage.getItem(key);
+        console.log(textInfo, "this is the getItem");
+        if(textInfo){
+            $("#event" + key).append(textInfo);
+        }
+    }
+  
     
     
-    // var value = localStorage.getItem("key");
-    // function getLocalStorage(event) {
-    //     if (value) 
-    //     $(`#event${key}`).text(value);
-    //     console.log(value)
-    // }
-
-    // $('.saveBtn').on('click', function(){
-    //     var eventText = $(this).parent().children($eventPlanner).val();
-       
-    //     var dataEl = $(this).parent().data("time");
-
-    //     localStorage.setItem(dataEl, eventText);
-
-    // })
 });
        
     
