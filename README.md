@@ -23,6 +23,10 @@ WHEN I refresh the page
 THEN the saved events persist
 ```
 
+## Screenshots
+<img src="https://user-images.githubusercontent.com/74076318/108432794-916cd400-720a-11eb-847a-75f21ed187c2.png">
+<img src="https://user-images.githubusercontent.com/74076318/108432861-a8132b00-720a-11eb-9e39-0e9beee4a020.png">
+
 ## Link
 <a href="https://mtjones1979.github.io/Work-Day-Scheduler/">Click</a>
 
